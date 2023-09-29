@@ -19,6 +19,9 @@ arr.forEach(button => {
             input.value = string;
         }
         else if(e.target.innerHTML == '%'){
+            if (string.includes('*') || string.includes('+') || string.includes('-') || string.includes('/')) {
+                string = eval(string);
+              }
             string = parseInt(string)/100;
             input.value = string;
         }
